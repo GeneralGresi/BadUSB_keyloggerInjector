@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['keylogger.py'],
+    ['keylogger_with_data.py'],
     pathex=[],
     binaries=[],
     datas=[],
