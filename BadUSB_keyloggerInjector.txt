@@ -24,6 +24,9 @@ REM Disable script blocker
 STRING Set-ExecutionPolicy unrestricted -Force
 ENTER
 REM Download ps1 script
+ENTER
+STRING $ProgressPreference = 'SilentlyContinue'
+ENTER
 STRING wget LINK -OutFile stage1.ps1
 ENTER
 DELAY 3500

